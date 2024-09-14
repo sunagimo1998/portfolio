@@ -6,4 +6,4 @@ docker compose exec frontend bash
 # Docker 終了時
 docker compose down
 docker ps -aq | xargs docker rm
-docker images -aq | xargs docker rmi
+docker images -aq | xargs docker rmi -f
