@@ -1,0 +1,17 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ./docker/frontend/Dockerfile
+    volumes:
+      # TODO https://zenn.dev/sarisia/articles/0c1db052d09921
+      - ./frontend:/usr/src/frontend
+      # node_modulesはマウント対象から除外
+      # - /usr/src/frontend/node_modules/
+      # node_modulesはマウント対象から除外
+      # - /usr/src/frontend/app/node_modules/
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
